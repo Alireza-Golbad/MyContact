@@ -18,7 +18,15 @@ namespace MyContact
 
         public bool Insert(string name, string family, string mobile, string email, int age, string address)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlConnection connection = new SqlConnection(connectionString);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public DataTable SelectAll()
